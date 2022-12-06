@@ -1,0 +1,40 @@
+function sinParametros() {
+    return true
+}
+
+console.log(sinParametros());
+
+const miPromesa = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, 5000);
+    });
+}
+
+miPromesa() .then(() => console.log("Hola soy una promesa"));
+
+function* generaIndice() {
+    let ind = 0;
+    while(true) {
+        ind = ind+2;
+        yield ind;
+        if (ind === 20) {
+            return ind;
+        }
+    }
+};
+
+const gen = generaIndice();
+
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
+console.log(gen.next());
